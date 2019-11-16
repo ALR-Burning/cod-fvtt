@@ -1,0 +1,551 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            <div class="labels">
+                <span class="label-details">Age</span>
+                <span class="label-details">Concept</span>
+                <span class="label-details">Faction</span>
+                <span class="label-details">Virtue</span>
+                <span class="label-details">Vice</span>
+            </div>
+            <div class="details">
+                <input type="text" name="data.details.age.current" placeholder="Age" value="{{data.details.age.current}}" data-dtype="String" />
+                <input type="text" name="data.details.concept.current" placeholder="Concept" value="{{data.details.concept.current}}" data-dtype="String" />
+                <input type="text" name="data.details.faction.current" placeholder="Faction" value="{{data.details.faction.current}}" data-dtype="String" />
+                <input type="text" name="data.details.virtue.current" placeholder="Virtue" value="{{data.details.virtue.current}}" data-dtype="String" />
+                <input type="text" name="data.details.vice.current" placeholder="Vice" value="{{data.details.vice.current}}" data-dtype="String" />
+            </div>
+        </div>
+    </header>
+
+    <!--Tabs-->
+    <section id="tab-sections">
+        <nav id="codprimarytabs" class="sheet-tabs tabs">
+            <a class="item active" data-tab="main">Main</a>
+            <a class="item" data-tab="skills">Skills</a>
+            <a class="item" data-tab="merits">Merits</a>
+            <a class="item" data-tab="combat">Combat</a>
+            <a class="item" data-tab="customrolls">Custom Rolls</a>
+            <a class="item" data-tab="extra">Extra</a>
+        </nav>
+
+        <!-- Tab Contents -->
+        <div class="tab main" data-tab="main">
+            <h2>Attributes</h2>
+            <div class="attribute-section">
+                <div class="attribute-column attribute-categories">
+                    <span>Power</span>
+                    <span>Finesse</span>
+                    <span>Resistance</span>
+                </div>
+                <div class="attribute-column">
+                    <span class="attribute-type">Mental</span>
+                    <div class="attribute">
+                    <span><a>Intelligence</a></span>
+					<div class="attribute-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+                    </div>
+                    <div class="attribute">
+                    <span><a>Wits</a></span>
+					<div class="attribute-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+                    </div>
+					<div class="attribute">
+                    <span><a>Resolve</a></span>
+					<div class="attribute-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+                </div>
+                <div class="attribute-column">
+                    <span class="attribute-type">Physical</span>
+					<div class="attribute">
+                    <span><a>Strength</a></span>
+					<div class="attribute-circles">
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="attribute">
+                    <span><a>Dexterity</a></span>
+					<div class="attribute-circles">
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="attribute">
+                    <span><a>Stamina</a></span>
+					<div class="attribute-circles">
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+                </div>
+                <div class="attribute-column">
+                    <span class="attribute-type">Social</span>
+					<div class="attribute">
+                    <span><a>Presence</a></span>
+					<div class="attribute-circles">
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="attribute">
+                    <span><a>Manipulation</a></span>
+					<div class="attribute-circles">
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="attribute">
+                    <span><a>Composure</a></span>
+					<div class="attribute-circles">
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+                </div>
+            </div>
+			<div class="resources">
+				<div class="resources-type">
+				<span>Health</span>
+				<div class="circles">
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				</div>
+				<div class="squares">
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				</div>
+				</div>
+				<div class="resources-type">
+				<span>Willpower</span>
+				<div class="circles">
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				</div>
+				<div class="squares">
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				</div>
+				</div>
+				<div class="resources-type">
+				<span>Morality</span>
+				<div class="circles">
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				</div>
+				<div class="squares">
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				</div>
+				</div>
+			</div>
+			<div class="extra">
+				<div class="conditions">
+				<div class="conditions-title">
+				<span>Conditions</span>
+				</div>
+				<input type="text" name="data.attributes.extra.cond1.current" value="{{data.attributes.extra.cond1.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.extra.cond2.current" value="{{data.attributes.extra.cond2.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.extra.cond3.current" value="{{data.attributes.extra.cond3.current}}" data-dtype="String" />
+				</div>
+				<div class="aspirations">
+				<div class="aspirations-title">
+				<span>Aspirations</span>
+				</div>
+				<input type="text" name="data.attributes.extra.asp1.current" value="{{data.attributes.extra.asp1.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.extra.asp2.current" value="{{data.attributes.extra.asp2.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.extra.asp3.current" value="{{data.attributes.extra.asp3.current}}" data-dtype="String" />
+				</div>
+				</div>
+				<div class="extra2">
+				<div class="size extra-value">
+				<span>Size</span> <input type="text" name="data.attributes.extra.size.current" placeholder="5" value="{{data.attributes.extra.size.current}}" data-dtype="Number" />
+				</div>
+				<div class="speed extra-value">
+				<span>Speed</span> <input type="text" name="data.attributes.extra.speed.current" value="{{data.attributes.extra.speed.current}}" data-dtype="Number" />
+				</div>
+				<div class="defense extra-value">
+				<span>Defense</span> <input type="text" name="data.attributes.extra.defense.current" value="{{data.attributes.extra.defense.current}}" data-dtype="Number" />
+				</div>
+				<div class="exp extra-value">
+				<span>Experience</span> <input type="text" name="data.attributes.extra.exp.current" value="{{data.attributes.extra.exp.current}}" data-dtype="Number" />
+				</div>
+				<div class="beats extra-value">
+				<span>Beats</span>
+				<div class="beats-square">
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				</div>
+				</div>
+				</div>
+				<div class="guide extra-value">
+				<span>Attributes 5/4/3 • Skills 11/7/4 • Merits 7 • Health = Stamina + Size • Willpower = Resolve + Composure • Size = 5 for adult humans • Defense = Lowest of Dexterity or Wits + Athletics • Initiative Mod = Dexterity + Composure • Speed = Strength + Dexterity • Starting Morality = 7</span>
+				</div>
+				<div class="credits">
+				<span>Foundry Virtual Tabletop - Chronicles of Darkness v0.1 created by Burning and Moo Man</span>
+				</div>
+			</div>
+		<div class="tab skills" data-tab="skills">
+        <div class="skills">
+            <h2>Skills</h2>
+			<div class="skill-section">
+                <div class="skill-column">
+                    <span class="skill-type">Mental (-3 unskilled)</span>
+                    <div class="skill">
+                    <span><a>Academics</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+                    </div>
+                    <div class="skill">
+                    <span><a>Computer</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+                    </div>
+					<div class="skill">
+                    <span><a>Crafts</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Investigation</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Medicine</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Occult</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Politics</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Science</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+                </div>
+                <div class="skill-column">
+                    <span class="skill-type">Physical (-1 unskilled)</span>
+					<div class="skill">
+                    <span><a>Athletics</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Brawl</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Drive</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Firearms</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Larceny</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Stealth</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Survival</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Weaponry</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+                </div>
+                <div class="skill-column">
+                    <span class="skill-type">Social (-1 unskilled)</span>
+					<div class="skill">
+                    <span><a>Animel Ken</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Empathy</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Expression</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Intimidation</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Persuasion</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Socialize</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Streetwise</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+					<div class="skill">
+                    <span><a>Subterfuge</a></span>
+					<div class="skill-circles">
+                    <a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					<a><i class="far fa-circle"></i></a>
+					</div>
+					</div>
+                </div>
+            </div>
+			<div class="special">
+				<div class="specializations">
+				<div class="specializations-title">
+				<span>Specializations</span>
+				</div>
+				<input type="text" name="data.attributes.special.special1.current" value="{{data.attributes.special.special1.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.special.special2.current" value="{{data.attributes.special.special2.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.special.special3.current" value="{{data.attributes.special.special3.current}}" data-dtype="String" />
+				</div>
+				<div class="other">
+				<div class="other-title">
+				<span>Other</span>
+				</div>
+				<input type="text" name="data.attributes.special.other1.current" value="{{data.attributes.special.other1.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.special.other2.current" value="{{data.attributes.special.other2.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.special.other3.current" value="{{data.attributes.special.other3.current}}" data-dtype="String" />
+				</div>
+			</div>
+			<div class="guide extra-value">
+				<span>Attributes 5/4/3 • Skills 11/7/4 • Merits 7 • Health = Stamina + Size • Willpower = Resolve + Composure • Size = 5 for adult humans • Defense = Lowest of Dexterity or Wits + Athletics • Initiative Mod = Dexterity + Composure • Speed = Strength + Dexterity • Starting Morality = 7</span>
+			</div>
+			<div class="credits">
+				<span>Foundry Virtual Tabletop - Chronicles of Darkness v0.1 created by Burning and Moo Man</span>
+			</div>
+		</div>
+		</div>
+        <div class="tab merits" data-tab="merits">
+		<div class="merits">
+            <h2>pls kill me</h2>
+		</div>
+        </div>
+        <div class="tab combat" data-tab="combat">
+		aaaa
+        </div>
+        <div class="tab customrolls" data-tab="customrolls">
+		bbbb
+        </div>
+        <div class="tab extra" data-tab="extra">
+		cccc
+        </div>
+    </section>
+</form>

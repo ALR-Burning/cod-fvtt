@@ -1,0 +1,356 @@
+{
+  "actor": {
+    "data": {
+        "attributes": {
+          "int": {
+            "type": "Number",
+            "label": "Intelligence",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "wits": {
+            "type": "Number",
+            "label": "Wits",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "Resolve": {
+            "type": "Number",
+            "label": "Resolve",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "str": {
+            "type": "Number",
+            "label": "Strength",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "dex": {
+            "type": "Number",
+            "label": "Dexterity",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "sta": {
+            "type": "Number",
+            "label": "Stamina",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "pre": {
+            "type": "Number",
+            "label": "Presence",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "manip": {
+            "type": "Number",
+            "label": "Manipulation",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "comp": {
+            "type": "Number",
+            "label": "Composure",
+            "current": 1,
+            "max" : 5,
+            "min": 1,
+            "proficient": 0
+          },
+          "hp": {
+            "type": "Number",
+            "label": "Health",
+            "current": 5,
+            "max" : 10,
+            "min": 1,
+            "proficient": 0
+          },
+          "wp": {
+            "type": "Number",
+            "label": "Willpower",
+            "current": 5,
+            "max" : 10,
+            "min": 1,
+            "proficient": 0
+          },
+          "moral": {
+            "type": "Number",
+            "label": "Morality",
+            "current": 7,
+            "max" : 10,
+            "min": 0,
+            "proficient": 0
+          },
+          "size": {
+            "type": "Number",
+            "label": "Size",
+            "current": 5,
+            "max" : 10,
+            "min": 0,
+            "proficient": 0
+          },
+          "speed": {
+            "type": "Number",
+            "label": "Speed",
+            "current": 5,
+            "max" : 10,
+            "min": 0,
+            "proficient": 0
+          },
+          "def": {
+            "type": "Number",
+            "label": "Defense",
+            "current": 0,
+            "max" : 10,
+            "min": 0,
+            "proficient": 0
+          },
+          "armor": {
+            "type": "Number",
+            "label": "Armor",
+            "current": 0,
+            "max" : 10,
+            "min": 0,
+            "proficient": 0
+          },
+          "init": {
+            "type": "Number",
+            "label": "Initiative",
+            "current": 0,
+            "max" : 20,
+            "min": 0,
+            "proficient": 0
+          },
+          "exp": {
+            "type": "Number",
+            "label": "Experience",
+            "current": 0,
+            "max" : 10,
+            "min": 0,
+            "proficient": 0
+          },
+        "details": {
+            "age": {
+              "type": "Number",
+              "label": "Age",
+              "current": 1,
+              "max" : 500,
+              "min": 1,
+              "proficient": 0
+            },
+            "player": {
+              "type": "Number",
+              "label": "Player",
+              "current": 1,
+              "max" : 500,
+              "min": 1,
+              "proficient": 0
+            },
+            "virtue": {
+              "type": "Number",
+              "label": "Virtue",
+              "current": 1,
+              "max" : 500,
+              "min": 1,
+              "proficient": 0
+            },
+            "vice": {
+              "type": "Number",
+              "label": "Vice",
+              "current": 1,
+              "max" : 500,
+              "min": 1,
+              "proficient": 0
+            },
+            "concept": {
+              "type": "Number",
+              "label": "Concept",
+              "current": 1,
+              "max" : 500,
+              "min": 1,
+              "proficient": 0
+            },
+            "chronicle": {
+              "type": "Number",
+              "label": "Chronicle",
+              "current": 1,
+              "max" : 500,
+              "min": 1,
+              "proficient": 0
+            },
+            "faction": {
+              "type": "Number",
+              "label": "Faction",
+              "current": 1,
+              "max" : 500,
+              "min": 1,
+              "proficient": 0
+            },
+            "group": {
+              "type": "Number",
+              "label": "Group",
+              "current": 1,
+              "max" : 500,
+              "min": 1,
+              "proficient": 0
+            }
+        }
+      }
+    }
+  },
+  "item": {
+    "data": {
+      "description": {
+        "type": "String",
+        "label": "Description",
+        "value": ""
+      }
+    },
+    "weapon": {
+      "damage": {
+        "type": "String",
+        "label": "Damage",
+        "value": ""
+      },
+      "range": {
+        "type": "String",
+        "label": "Range",
+        "value": ""
+      },
+      "clip": {
+        "type": "String",
+        "label": "Clip",
+        "value": ""
+      },
+      "initiative": {
+        "type": "String",
+        "label": "Initiative",
+        "value": ""
+      },
+      "str": {
+        "type": "String",
+        "label": "Strength",
+        "value": ""
+      },
+      "availability": {
+        "type": "String",
+        "label": "Availability",
+        "value": ""
+      }
+    },
+    "armor": {
+      "rating": {
+        "type": "String",
+        "label": "Rating",
+        "value": ""
+      },
+      "str": {
+        "type": "String",
+        "label": "Strength",
+        "value": ""
+      },
+      "def": {
+        "type": "String",
+        "label": "Defense",
+        "value": ""
+      },
+      "speed": {
+        "type": "String",
+        "label": "Speed",
+        "value": ""
+      },
+      "availability": {
+        "type": "String",
+        "label": "Availability",
+        "value": ""
+      },
+      "coverage": {
+        "type": "String",
+        "label": "Coverage",
+        "value": ""
+      }
+    },
+    "equipment": {
+      "bonus": {
+        "type": "String",
+        "label": "Dice Bonus",
+        "value": ""
+      },
+      "durability": {
+        "type": "String",
+        "label": "Durability",
+        "value": ""
+      },
+      "size": {
+        "type": "String",
+        "label": "Size",
+        "value": ""
+      },
+      "structure": {
+        "type": "String",
+        "label": "Structure",
+        "value": ""
+      },
+      "availability": {
+        "type": "String",
+        "label": "Availability",
+        "value": ""
+      }
+    },
+    "service": {
+      "availability": {
+        "type": "String",
+        "label": "Availability",
+        "value": ""
+      },
+      "bonus": {
+        "type": "String",
+        "label": "Dice Bonus",
+        "value": ""
+      }
+    },
+    "tilt": { },
+    "condition": { },
+    "merit": { },
+    "dread": { },
+    "vehicle": {
+      "modifier": {
+        "type": "String",
+        "label": "Dice Modifier",
+        "value": ""
+      },
+      "size": {
+        "type": "String",
+        "label": "Size",
+        "value": ""
+      },
+      "durability": {
+        "type": "String",
+        "label": "Durability/Structure",
+        "value": ""
+      },
+      "speed": {
+        "type": "String",
+        "label": "Speed",
+        "value": ""
+      }
+    }
+  }
+}

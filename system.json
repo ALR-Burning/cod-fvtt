@@ -1,0 +1,13 @@
+{
+  "name": "cod",
+  "title": "Chronicles of Darkness",
+  "description": "I'll make one later.",
+  "version": 0.1,
+  "author": "Burning, Moo Man",
+  "scripts": ["scripts/cod.js"],
+  "styles": ["styles/cod.css"],
+  "packs": [],
+  "initiative": "1d10",
+  "gridDistance": 1,
+  "gridUnits": "m"
+}

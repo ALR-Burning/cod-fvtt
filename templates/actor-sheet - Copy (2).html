@@ -1,0 +1,212 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            <div class="labels">
+                <span class="label-details">Age</span>
+                <span class="label-details">Concept</span>
+                <span class="label-details">Faction</span>
+                <span class="label-details">Virtue</span>
+                <span class="label-details">Vice</span>
+            </div>
+            <div class="details">
+                <input type="text" name="data.details.age.current" placeholder="Age" value="{{data.details.age.current}}" data-dtype="String" />
+                <input type="text" name="data.details.concept.current" placeholder="Concept" value="{{data.details.concept.current}}" data-dtype="String" />
+                <input type="text" name="data.details.faction.current" placeholder="Faction" value="{{data.details.faction.current}}" data-dtype="String" />
+                <input type="text" name="data.details.virtue.current" placeholder="Virtue" value="{{data.details.virtue.current}}" data-dtype="String" />
+                <input type="text" name="data.details.vice.current" placeholder="Vice" value="{{data.details.vice.current}}" data-dtype="String" />
+            </div>
+        </div>
+    </header>
+
+    <!--Tabs-->
+    <section id="tab-sections">
+        <nav id="codprimarytabs" class="sheet-tabs tabs">
+            <a class="item active" data-tab="main">Main</a>
+            <a class="item" data-tab="skills">Skills</a>
+            <a class="item" data-tab="merits">Merits</a>
+            <a class="item" data-tab="combat">Combat</a>
+            <a class="item" data-tab="customrolls">Custom Rolls</a>
+            <a class="item" data-tab="extra">Extra</a>
+        </nav>
+
+        <!-- Tab Contents -->
+        <div class="tab main" data-tab="main">
+            <h2>Attributes</h2>
+            <div class="attribute-section">
+                <div class="attribute-column attribute-categories">
+                    <span>Power</span>
+                    <span>Finesse</span>
+                    <span>Resistance</span>
+                </div>
+                <div class="attribute-column">
+                    <span class="attribute-type">Mental</span>
+                    <div class="attribute">
+                    <span><a>Intelligence</a></span>
+                    <input type="text" name="data.attributes.int.current" value="{{data.attributes.int.current}}" data-dtype="Number" />
+                    </div>
+                    <div class="attribute">
+                    <span><a>Wits</a></span>
+                    <input type="text" name="data.attributes.wits.current" value="{{data.attributes.wits.current}}" data-dtype="String" />
+                    </div>
+					<div class="attribute">
+                    <span><a>Resolve</a></span>
+                    <input type="text" name="data.attributes.res.current" value="{{data.attributes.res.current}}" data-dtype="String" />
+					</div>
+                </div>
+                <div class="attribute-column">
+                    <span class="attribute-type">Physical</span>
+					<div class="attribute">
+                    <span><a>Strength</a></span>
+					<input type="text" name="data.attributes.str.current" value="{{data.attributes.str.current}}" data-dtype="String" />
+					</div>
+					<div class="attribute">
+                    <span><a>Dexterity</a></span>
+					<input type="text" name="data.attributes.dex.current" value="{{data.attributes.dex.current}}" data-dtype="String" />
+					</div>
+					<div class="attribute">
+                    <span><a>Stamina</a></span>
+					<input type="text" name="data.attributes.sta.current" value="{{data.attributes.sta.current}}" data-dtype="String" />
+					</div>
+                </div>
+                <div class="attribute-column">
+                    <span class="attribute-type">Social</span>
+					<div class="attribute">
+                    <span><a>Presence</a></span>
+					<input type="text" name="data.attributes.pre.current" value="{{data.attributes.pre.current}}" data-dtype="String" />
+					</div>
+					<div class="attribute">
+                    <span><a>Manipulation</a></span>
+					<input type="text" name="data.attributes.man.current" value="{{data.attributes.man.current}}" data-dtype="String" />
+					</div>
+					<div class="attribute">
+                    <span><a>Composure</a></span>
+					<input type="text" name="data.attributes.com.current" value="{{data.attributes.com.current}}" data-dtype="String" />
+					</div>
+                </div>
+            </div>
+			<div class="resources">
+				<div class="resources-type">
+				<span>Health</span>
+				<div class="circles">
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				</div>
+				<div class="squares">
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				</div>
+				</div>
+				<div class="resources-type">
+				<span>Willpower</span>
+				<div class="circles">
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				</div>
+				<div class="squares">
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				</div>
+				</div>
+				<div class="resources-type">
+				<span>Morality</span>
+				<div class="circles">
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				<i class="fas fa-circle"></i>
+				</div>
+				<div class="squares">
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				</div>
+				</div>
+			</div>
+			<div class="extra">
+				<div class="conditions">
+				<div class="conditions-title">
+				<span>Conditions</span>
+				</div>
+				<input type="text" name="data.attributes.extra.cond1.current" value="{{data.attributes.extra.cond1.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.extra.cond2.current" value="{{data.attributes.extra.cond2.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.extra.cond3.current" value="{{data.attributes.extra.cond3.current}}" data-dtype="String" />
+				</div>
+				<div class="aspirations">
+				<div class="aspirations-title">
+				<span>Aspirations</span>
+				</div>
+				<input type="text" name="data.attributes.extra.asp1.current" value="{{data.attributes.extra.asp1.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.extra.asp2.current" value="{{data.attributes.extra.asp2.current}}" data-dtype="String" />
+				<input type="text" name="data.attributes.extra.asp3.current" value="{{data.attributes.extra.asp3.current}}" data-dtype="String" />
+				</div>
+				</div>
+				<div class="extra2">
+				<div class="size extra-value">
+				<span>Size</span> <input type="text" name="data.attributes.extra.size.current" placeholder="5" value="{{data.attributes.extra.size.current}}" data-dtype="Number" />
+				</div>
+				<div class="speed extra-value">
+				<span>Speed</span> <input type="text" name="data.attributes.extra.speed.current" value="{{data.attributes.extra.speed.current}}" data-dtype="Number" />
+				</div>
+				<div class="defense extra-value">
+				<span>Defense</span> <input type="text" name="data.attributes.extra.defense.current" value="{{data.attributes.extra.defense.current}}" data-dtype="Number" />
+				</div>
+				<div class="exp extra-value">
+				<span>Experience</span> <input type="text" name="data.attributes.extra.exp.current" value="{{data.attributes.extra.exp.current}}" data-dtype="Number" />
+				</div>
+				<div class="beats extra-value">
+				<span>Beats</span>
+				<div class="beats-square">
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				<a><i class="far fa-square"></i></a>
+				</div>
+				</div>
+				</div>
+				<div class="guide extra-value">
+				<span>Attributes 5/4/3 • Skills 11/7/4 • Merits 7 • Health = Stamina + Size • Willpower = Resolve + Composure • Size = 5 for adult humans • Defense = Lowest of Dexterity or Wits + Athletics • Initiative Mod = Dexterity + Composure • Speed = Strength + Dexterity • Starting Moralty = 7</span>
+				</div>
+			</div>
+        <div class="tab skills" data-tab="skills">
+            <br> fuck
+        </div>
+        <div class="tab merits" data-tab="merits">
+            pls kill me
+        </div>
+        <div class="tab combat" data-tab="combat">
+        </div>
+        <div class="tab customrolls" data-tab="customrolls">
+        </div>
+        <div class="tab extra" data-tab="extra">
+        </div>
+    </section>
+</form>
