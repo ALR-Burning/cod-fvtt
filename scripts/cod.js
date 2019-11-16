@@ -9,7 +9,7 @@ class SimpleActorSheet extends ActorSheet {
 	static get defaultOptions() {
 	  const options = super.defaultOptions;
 	  options.classes = options.classes.concat(["cod", "actor-sheet"]);
-	  options.template = "public/systems/cod/templates/actor-sheet.html";
+	  options.template = "public/systems/cod/templates/actor/actor-sheet.html";
     options.width = 610;
     options.height = 610;
 	  return options;
@@ -90,3 +90,15 @@ Items.registerSheet("core", SimpleItemSheet, {
  * @type {String}
  */
 CONFIG.initiative.formula = "1d20";
+
+Hooks.once("init", () => {
+    loadTemplates([
+	"public/systems/cod/templates/actor/actor-main.html"
+    ]);
+  });
+  
+  Hooks.once("init", () => {
+    loadTemplates([
+	"public/systems/cod/templates/actor/actor-skills.html"
+    ]);
+  });

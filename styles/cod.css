@@ -326,16 +326,28 @@ h2 {
 	flex-grow : 1;
 }
 
-.cod.sheet .skills .guide {
+.cod.sheet .footer {
+	position:relative;
+	bottom: -15px;
+}
+
+.cod.sheet .main {
+	margin-bottom: 20px
+}
+
+#tab-sections {
+height: 67%
+}
+
+.cod.sheet .guide {
+	margin-bottom: 9px;
 	text-align: center;
-	margin-top: 21px;
 	color: rgb(64, 86, 134);
 	font-size: 11px
 }
 
-.cod.sheet .skills .credits {
+.cod.sheet .credits {
 	text-align: center;
-	margin-top: 20px;
 	font-style: italic;
 	color: rgb(64, 86, 134);
 	font-size: 11px
