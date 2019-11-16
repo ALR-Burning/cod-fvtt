@@ -8,7 +8,7 @@ class SimpleActorSheet extends ActorSheet {
    */
 	static get defaultOptions() {
 	  const options = super.defaultOptions;
-	  options.classes = options.classes.concat(["worldbuilding", "actor-sheet"]);
+	  options.classes = options.classes.concat(["cod", "actor-sheet"]);
 	  options.template = "public/systems/cod/templates/actor-sheet.html";
     options.width = 610;
     options.height = 610;
