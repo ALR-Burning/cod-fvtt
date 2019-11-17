@@ -1,7 +1,12 @@
+class ActorCoD extends Actor 
+{
+}
+CONFIG.Actor.entityClass = ActorCoD
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  */
-class SimpleActorSheet extends ActorSheet {
+class ActorSheetCoD extends ActorSheet {
 
   /**
    * Extend and override the default options used by the 5e Actor Sheet
@@ -14,6 +19,16 @@ class SimpleActorSheet extends ActorSheet {
     options.height = 610;
 	  return options;
   }
+
+getData() {
+      const sheetData = super.getData();
+	  this._prepareItems(sheetData.actor);
+      return sheetData;
+    }
+	
+_prepareItems(actorData)
+{
+}
 
   /* -------------------------------------------- */
 
@@ -52,7 +67,7 @@ class SimpleActorSheet extends ActorSheet {
 }
 
 Actors.unregisterSheet("core", ActorSheet);
-Actors.registerSheet("core", SimpleActorSheet, {
+Actors.registerSheet("core", ActorSheetCoD, {
   types: [],
   makeDefault: true
 });
@@ -100,5 +115,11 @@ Hooks.once("init", () => {
   Hooks.once("init", () => {
     loadTemplates([
 	"public/systems/cod/templates/actor/actor-skills.html"
+    ]);
+  });
+  
+    Hooks.once("init", () => {
+    loadTemplates([
+	"public/systems/cod/templates/actor/actor-merits.html"
     ]);
   });
