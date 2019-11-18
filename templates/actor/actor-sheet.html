@@ -1,63 +1,60 @@
 <form class="{{cssClass}}" autocomplete="off">
-
-    <header class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-            <div class="labels">
-                <span class="label-details">Age</span>
-                <span class="label-details">Concept</span>
-                <span class="label-details">Faction</span>
-                <span class="label-details">Virtue</span>
-                <span class="label-details">Vice</span>
-            </div>
-            <div class="details">
-                <input type="text" name="data.details.age.current" placeholder="Age" value="{{data.details.age.current}}" data-dtype="String" />
-                <input type="text" name="data.details.concept.current" placeholder="Concept" value="{{data.details.concept.current}}" data-dtype="String" />
-                <input type="text" name="data.details.faction.current" placeholder="Faction" value="{{data.details.faction.current}}" data-dtype="String" />
-                <input type="text" name="data.details.virtue.current" placeholder="Virtue" value="{{data.details.virtue.current}}" data-dtype="String" />
-                <input type="text" name="data.details.vice.current" placeholder="Vice" value="{{data.details.vice.current}}" data-dtype="String" />
-            </div>
-        </div>
-    </header>
-
-    <!--Tabs-->
-    <section id="tab-sections">
-        <nav id="codprimarytabs" class="sheet-tabs tabs">
-            <a class="item active" data-tab="main">Main</a>
-            <a class="item" data-tab="skills">Skills</a>
-            <a class="item" data-tab="merits">Merits</a>
-            <a class="item" data-tab="combat">Combat</a>
-            <a class="item" data-tab="customrolls">Custom Rolls</a>
-            <a class="item" data-tab="extra">Extra</a>
-        </nav>
-
-        <!-- Tab Contents -->
-        <div class="tab main" data-tab="main">
-		{{> public/systems/cod/templates/actor/actor-main.html }}
-		</div>
-		<div class="tab skills" data-tab="skills">
-		{{> public/systems/cod/templates/actor/actor-skills.html }}
-		</div>
-        <div class="tab merits" data-tab="merits">
-		{{> public/systems/cod/templates/actor/actor-merits.html }}
-        </div>
-        <div class="tab combat" data-tab="combat">
-		aaaa
-        </div>
-        <div class="tab customrolls" data-tab="customrolls">
-		bbbb
-        </div>
-        <div class="tab extra" data-tab="extra">
-		cccc
-        </div>
-    </section>
-	<div class="footer">
-		<div class="guide">
-		<span>Attributes 5/4/3 • Skills 11/7/4 • Merits 7 • Health = Stamina + Size • Willpower = Resolve + Composure • Size = 5 for adult humans • Defense = Lowest of Dexterity or Wits + Athletics • Initiative Mod = Dexterity + Composure • Speed = Strength + Dexterity • Starting Morality = 7</span>
-		</div>
-		<div class="credits">
-		<span>Foundry Virtual Tabletop - Chronicles of Darkness v0.1 created by Burning and Moo Man</span>
-		</div>
-		</div>
+   <header class="sheet-header">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+      <div class="header-fields">
+         <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+         <div class="labels">
+            <span class="label-details">Age</span>
+            <span class="label-details">Concept</span>
+            <span class="label-details">Faction</span>
+            <span class="label-details">Virtue</span>
+            <span class="label-details">Vice</span>
+         </div>
+         <div class="details">
+            <input type="text" name="data.details.age.current" placeholder="Age" value="{{data.details.age.current}}" data-dtype="String" />
+            <input type="text" name="data.details.concept.current" placeholder="Concept" value="{{data.details.concept.current}}" data-dtype="String" />
+            <input type="text" name="data.details.faction.current" placeholder="Faction" value="{{data.details.faction.current}}" data-dtype="String" />
+            <input type="text" name="data.details.virtue.current" placeholder="Virtue" value="{{data.details.virtue.current}}" data-dtype="String" />
+            <input type="text" name="data.details.vice.current" placeholder="Vice" value="{{data.details.vice.current}}" data-dtype="String" />
+         </div>
+      </div>
+   </header>
+   <!--Tabs-->
+   <section id="tab-sections">
+      <nav id="codprimarytabs" class="sheet-tabs tabs">
+         <a class="item active" data-tab="main">Main</a>
+         <a class="item" data-tab="skills">Skills</a>
+         <a class="item" data-tab="merits">Merits</a>
+         <a class="item" data-tab="combat">Combat</a>
+         <a class="item" data-tab="customrolls">Custom Rolls</a>
+         <a class="item" data-tab="extra">Extra</a>
+      </nav>
+      <!-- Tab Contents -->
+      <div class="tab main" data-tab="main">
+         {{> public/systems/cod/templates/actor/actor-main.html }}
+      </div>
+      <div class="tab skills" data-tab="skills">
+         {{> public/systems/cod/templates/actor/actor-skills.html }}
+      </div>
+      <div class="tab merits" data-tab="merits">
+         {{> public/systems/cod/templates/actor/actor-merits.html }}
+      </div>
+      <div class="tab combat" data-tab="combat">
+         aaaa
+      </div>
+      <div class="tab customrolls" data-tab="customrolls">
+         bbbb
+      </div>
+      <div class="tab extra" data-tab="extra">
+         cccc
+      </div>
+   </section>
+   <div class="footer">
+      <div class="guide">
+         <span>Attributes 5/4/3 • Skills 11/7/4 • Merits 7 • Health = Stamina + Size • Willpower = Resolve + Composure • Size = 5 for adult humans • Defense = Lowest of Dexterity or Wits + Athletics • Initiative Mod = Dexterity + Composure • Speed = Strength + Dexterity • Starting Morality = 7</span>
+      </div>
+      <div class="credits">
+         <span>Foundry Virtual Tabletop - Chronicles of Darkness v0.1 created by Burning and Moo Man</span>
+      </div>
+   </div>
 </form>

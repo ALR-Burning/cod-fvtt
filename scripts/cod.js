@@ -91,10 +91,17 @@ class CoDItemSheet extends ItemSheet {
 	  options.height = 400;
 	  return options;
   }
+   /**
+     * Use a type-specific template for each different item type
+     */
+    get template() {
+      let type = this.item.type;
+      return `public/systems/cod/templates/items/item-${type}-sheet.html`;
+    }
 }
 
 Items.unregisterSheet("core", ItemSheet);
-Items.registerSheet("core", SimpleItemSheet, {
+Items.registerSheet("core", CoDItemSheet, {
   types: [],
   makeDefault: true
 });
