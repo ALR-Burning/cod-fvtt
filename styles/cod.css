@@ -115,13 +115,9 @@ h2 {
 	padding: 3px
 }
 
-.cod.sheet .main .attribute-section .attribute-column .attribute-circles > * {
-	margin-left: -2.15px
-}
-
 .cod.sheet .main .attribute-section .attribute-categories {
 	font-weight:1000;
-	margin-top: -1px;
+	margin-top: 0px;
     width: 20%;
 	border: none;
 	color: rgb(64, 86, 134);
@@ -133,14 +129,16 @@ h2 {
 	font-weight:1000;
 	color: rgb(64, 86, 134);
 }
-.cod.sheet .main .attribute-column .attribute > input {
-    width: 30px;
-    height: 20px
+.cod.sheet .main .attribute-column .attribute input {
+    width: 27px;
+    height: 18px;
+	text-align: center
 }
 
 .cod.sheet .main .attribute-column .attribute {
     display: flex;
     justify-content: space-between;
+	margin-top: 0px;
 }
 .cod.sheet .main .attribute-section .attribute-categories > span{
     margin-top: 2.47px;
@@ -275,7 +273,9 @@ h2 {
 
 .cod.sheet .skills .skill-column .skill > input {
     width: 30px;
-    height: 20px
+    height: 20px;
+	margin-top: -0.5px;
+	text-align: center
 }
 
 .cod.sheet .skills .skill-column .skill {

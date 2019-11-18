@@ -79,7 +79,7 @@ Actors.registerSheet("core", ActorSheetCoD, {
 /**
  * Extend the basic ItemSheet with some very simple modifications
  */
-class SimpleItemSheet extends ItemSheet {
+class CoDItemSheet extends ItemSheet {
 
   /**
    * Extend and override the default options used by the 5e Actor Sheet
@@ -108,18 +108,8 @@ CONFIG.initiative.formula = "1d20";
 
 Hooks.once("init", () => {
     loadTemplates([
-	"public/systems/cod/templates/actor/actor-main.html"
-    ]);
-  });
-  
-  Hooks.once("init", () => {
-    loadTemplates([
-	"public/systems/cod/templates/actor/actor-skills.html"
-    ]);
-  });
-  
-    Hooks.once("init", () => {
-    loadTemplates([
-	"public/systems/cod/templates/actor/actor-merits.html"
+    "public/systems/cod/templates/actor/actor-main.html",
+    "public/systems/cod/templates/actor/actor-merits.html",
+    "public/systems/cod/templates/actor/actor-skills.html"
     ]);
   });

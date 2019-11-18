@@ -18,7 +18,7 @@
             "min": 1,
             "proficient": 0
           },
-          "Resolve": {
+          "resolve": {
             "type": "Number",
             "label": "Resolve",
             "current": 1,
@@ -212,8 +212,202 @@
               "proficient": 0
             }
         }
-      }
-    }
+      },
+	  "skills": {
+          "academics": {
+            "type": "Number",
+            "label": "Academics",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "computer": {
+            "type": "Number",
+            "label": "Computer",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "crafts": {
+            "type": "Number",
+            "label": "Crafts",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "investigation": {
+            "type": "Number",
+            "label": "Investigation",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "medicine": {
+            "type": "Number",
+            "label": "Medicine",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "occult": {
+            "type": "Number",
+            "label": "Occult",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "politics": {
+            "type": "Number",
+            "label": "Politics",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "science": {
+            "type": "Number",
+            "label": "Science",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "athletics": {
+            "type": "Number",
+            "label": "Athletics",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "brawl": {
+            "type": "Number",
+            "label": "Brawl",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "drive": {
+            "type": "Number",
+            "label": "Drive",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "firearms": {
+            "type": "Number",
+            "label": "Firearms",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "larceny": {
+            "type": "Number",
+            "label": "Larceny",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "stealth": {
+            "type": "Number",
+            "label": "Stealth",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "survival": {
+            "type": "Number",
+            "label": "Survival",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "weaponry": {
+            "type": "Number",
+            "label": "Weaponry",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "animalken": {
+            "type": "Number",
+            "label": "Animal Ken",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "empathy": {
+            "type": "Number",
+            "label": "Empathy",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "expression": {
+            "type": "Number",
+            "label": "Expression",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "intimidation": {
+            "type": "Number",
+            "label": "Intimidation",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "persuasion": {
+            "type": "Number",
+            "label": "Persuasion",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "socialize": {
+            "type": "Number",
+            "label": "Socialize",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "streetwise": {
+            "type": "Number",
+            "label": "Streetwise",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          },
+		  "subterfuge": {
+            "type": "Number",
+            "label": "Subterfuge",
+            "current": 0,
+            "max" : 5,
+            "min": 0,
+            "proficient": 0
+          }
+		}
+	}
   },
   "item": {
     "data": {
