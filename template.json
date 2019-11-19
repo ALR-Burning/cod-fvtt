@@ -417,39 +417,7 @@
         "value": ""
       }
     },
-    "weapon": {
-      "damage": {
-        "type": "String",
-        "label": "Damage",
-        "value": ""
-      },
-      "range": {
-        "type": "String",
-        "label": "Range",
-        "value": ""
-      },
-      "clip": {
-        "type": "String",
-        "label": "Clip",
-        "value": ""
-      },
-      "initiative": {
-        "type": "String",
-        "label": "Initiative",
-        "value": ""
-      },
-      "str": {
-        "type": "String",
-        "label": "Strength",
-        "value": ""
-      },
-      "availability": {
-        "type": "String",
-        "label": "Availability",
-        "value": ""
-      }
-    },
-    "armor": {
+	"armor": {
       "rating": {
         "type": "String",
         "label": "Rating",
@@ -481,7 +449,9 @@
         "value": ""
       }
     },
-    "equipment": {
+	"condition": { },
+	"dread": { },
+	"equipment": {
       "bonus": {
         "type": "String",
         "label": "Dice Bonus",
@@ -508,7 +478,8 @@
         "value": ""
       }
     },
-    "service": {
+	"merit": { },
+	"service": {
       "availability": {
         "type": "String",
         "label": "Availability",
@@ -520,10 +491,7 @@
         "value": ""
       }
     },
-    "tilt": { },
-    "condition": { },
-    "merit": { },
-    "dread": { },
+	"tilt": { },
     "vehicle": {
       "modifier": {
         "type": "String",
@@ -543,6 +511,38 @@
       "speed": {
         "type": "String",
         "label": "Speed",
+        "value": ""
+      }
+    },
+    "weapon": {
+      "damage": {
+        "type": "String",
+        "label": "Damage",
+        "value": ""
+      },
+      "range": {
+        "type": "String",
+        "label": "Range",
+        "value": ""
+      },
+      "clip": {
+        "type": "String",
+        "label": "Clip",
+        "value": ""
+      },
+      "initiative": {
+        "type": "String",
+        "label": "Initiative",
+        "value": ""
+      },
+      "str": {
+        "type": "String",
+        "label": "Strength",
+        "value": ""
+      },
+      "availability": {
+        "type": "String",
+        "label": "Availability",
         "value": ""
       }
     }
