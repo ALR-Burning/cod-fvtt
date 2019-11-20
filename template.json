@@ -540,6 +540,11 @@
         "label": "Strength",
         "value": ""
       },
+	  "size": {
+        "type": "String",
+        "label": "Size",
+        "value": ""
+      },
       "availability": {
         "type": "String",
         "label": "Availability",

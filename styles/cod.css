@@ -10,6 +10,7 @@ a:hover {
 h2 {
 	font-size: 1.5em;
 	border-bottom-color: rgb(64, 86, 134);
+	font-family: inherit
 }
 
 /* Sheet Header */
@@ -132,7 +133,16 @@ h2 {
 .cod.sheet .main .attribute-column .attribute input {
     width: 27px;
     height: 18px;
-	text-align: center
+	text-align: center;
+	font-family: inherit;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
 
 .cod.sheet .main .attribute-column .attribute {
@@ -272,10 +282,11 @@ h2 {
 }
 
 .cod.sheet .skills .skill-column .skill > input {
-    width: 30px;
-    height: 20px;
-	margin-top: -0.5px;
-	text-align: center
+    width: 27px;
+    height: 18px;
+	margin-top: 0px;
+	text-align: center;
+	font-family: inherit;
 }
 
 .cod.sheet .skills .skill-column .skill {
@@ -395,4 +406,32 @@ height: 67%
 }
 .cod.sheet .items-list .item-controls {
     flex: 0 0 36px;
+}
+
+.cod.item-sheet .tabs .item.active {
+    text-decoration: underline;
+    text-shadow: none;
+}
+
+.cod.item-sheet .tabs .item {
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.cod.item-sheet .resource {
+    height: 40px;
+    width: 50%;
+    padding: 3px 10px;
+    float: left;
+}
+
+.cod.item-sheet .profile-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.cod.item-sheet .sheet-body .editor {
+    width: 100%;
+    height: 100%;
 }

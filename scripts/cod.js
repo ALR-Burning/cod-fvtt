@@ -39,6 +39,15 @@ _prepareItems(actorData)
 	activateListeners(html) {
     super.activateListeners(html);
 
+	html.find(".skill-click").click(event => {
+	let int = this.actor.data.data.attributes.int.current
+    let academics = this.actor.data.data.skills.academics.current
+    let result = int + academics
+	console.log(result)
+	let roll = new Roll(`${result}d10x10cs>=8`).roll()
+	roll.toMessage()
+    })
+
     // Activate tabs
     let tabs = html.find('.tabs');
     let initial = this.actor.data.flags["_sheetTab"];
@@ -86,7 +95,7 @@ class CoDItemSheet extends ItemSheet {
    */
 	static get defaultOptions() {
 	  const options = super.defaultOptions;
-	  options.classes = options.classes.concat(["worldbuilding", "item-sheet"]);
+	  options.classes = options.classes.concat(["cod", "item-sheet"]);
 	  options.template = "public/systems/cod/templates/item-sheet.html";
 	  options.height = 400;
 	  return options;
@@ -98,6 +107,21 @@ class CoDItemSheet extends ItemSheet {
       let type = this.item.type;
       return `public/systems/cod/templates/items/item-${type}-sheet.html`;
     }
+	/**
+   * Activate event listeners using the prepared sheet HTML
+   * @param html {HTML}   The prepared HTML object ready to be rendered into the DOM
+   */
+    activateListeners(html) {
+    super.activateListeners(html);
+
+    // Activate tabs
+    let tabs = html.find('.tabs');
+    let initial = this._sheetTab;
+    new Tabs(tabs, {
+      initial: initial,
+      callback: clicked => this._sheetTab = clicked.data("tab")
+    });
+	}
 }
 
 Items.unregisterSheet("core", ItemSheet);
