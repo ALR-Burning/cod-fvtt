@@ -18,7 +18,7 @@
             "min": 1,
             "proficient": 0
           },
-          "resolve": {
+          "res": {
             "type": "Number",
             "label": "Resolve",
             "current": 1,
@@ -58,7 +58,7 @@
             "min": 1,
             "proficient": 0
           },
-          "manip": {
+          "man": {
             "type": "Number",
             "label": "Manipulation",
             "current": 1,
@@ -66,7 +66,7 @@
             "min": 1,
             "proficient": 0
           },
-          "comp": {
+          "com": {
             "type": "Number",
             "label": "Composure",
             "current": 1,

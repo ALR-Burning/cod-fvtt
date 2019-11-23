@@ -1,3 +1,44 @@
+// Characteristic Names
+CONFIG.attributes = {
+  "int": "Intelligence",
+  "wits": "Wits",
+  "res": "Resolve",
+  "str": "Strength",
+  "dex": "Dexterity",
+  "sta": "Stamina",
+  "pre": "Presence",
+  "man": "Manipulation",
+  "com": "Composure"
+};
+
+// Skills Names
+CONFIG.skills = {
+  "academics": "Academics",
+  "computer": "Computer",
+  "crafts": "Crafts",
+  "investigation": "Investigation",
+  "medicine": "Medicine",
+  "occult": "Occult",
+  "politics": "Politics",
+  "science": "Science",
+  "athletics": "Athletics",
+  "brawl": "Brawl",
+  "drive": "Drive",
+  "firearms": "Firearms",
+  "larceny": "Larceny",
+  "stealth": "Stealth",
+  "survival": "Survival",
+  "weaponry": "Weaponry",
+  "animalken": "Animal Ken",
+  "empathy": "Empathy",
+  "expression": "Expression",
+  "intimidation": "Intimidation",
+  "persuasion": "Persuasion",
+  "socialize": "Socialize",
+  "streetwise": "Streetwise",
+  "subterfuge": "Subterfuge"
+};
+
 class ActorCoD extends Actor 
 {
 }
@@ -14,7 +55,7 @@ class ActorSheetCoD extends ActorSheet {
 	static get defaultOptions() {
 	  const options = super.defaultOptions;
 	  options.classes = options.classes.concat(["cod", "actor-sheet"]);
-	  options.template = "public/systems/cod/templates/actor/actor-sheet.html";
+	  options.template = "systems/cod/templates/actor/actor-sheet.html";
     options.width = 610;
     options.height = 610;
 	  return options;
@@ -96,7 +137,7 @@ class CoDItemSheet extends ItemSheet {
 	static get defaultOptions() {
 	  const options = super.defaultOptions;
 	  options.classes = options.classes.concat(["cod", "item-sheet"]);
-	  options.template = "public/systems/cod/templates/item-sheet.html";
+	  options.template = "systems/cod/templates/item-sheet.html";
 	  options.height = 400;
 	  return options;
   }
@@ -105,7 +146,7 @@ class CoDItemSheet extends ItemSheet {
      */
     get template() {
       let type = this.item.type;
-      return `public/systems/cod/templates/items/item-${type}-sheet.html`;
+      return `systems/cod/templates/items/item-${type}-sheet.html`;
     }
 	/**
    * Activate event listeners using the prepared sheet HTML
@@ -139,8 +180,8 @@ CONFIG.initiative.formula = "1d20";
 
 Hooks.once("init", () => {
     loadTemplates([
-    "public/systems/cod/templates/actor/actor-main.html",
-    "public/systems/cod/templates/actor/actor-merits.html",
-    "public/systems/cod/templates/actor/actor-skills.html"
+    "systems/cod/templates/actor/actor-main.html",
+    "systems/cod/templates/actor/actor-merits.html",
+    "systems/cod/templates/actor/actor-skills.html"
     ]);
   });

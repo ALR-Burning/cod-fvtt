@@ -9,5 +9,6 @@
   "packs": [],
   "initiative": "1d10",
   "gridDistance": 1,
-  "gridUnits": "m"
+  "gridUnits": "m",
+  "minimumCoreVersion" : "0.4.0"
 }
