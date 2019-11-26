@@ -139,7 +139,7 @@ _prepareItems(actorData)
 		{
             actorData.merits.push(i)
         }
-        if (i.type == "weapons") 
+        if (i.type == "weapon") 
 		{
             actorData.weapons.push(i)
         }
