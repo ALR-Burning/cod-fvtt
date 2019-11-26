@@ -122,8 +122,56 @@ getData() {
       return sheetData;
     }
 	
-_prepareItems(actorData)
+_prepareItems(actorData) 
 {
+    actorData.merits = []
+    actorData.weapons = []
+	actorData.armor = []
+	actorData.condition = []
+	actorData.dread = []
+	actorData.equipment = []
+	actorData.service = []
+	actorData.tilt = []
+	actorData.vehicle = []
+    for (let i of actorData.items) 
+	{
+        if (i.type == "merit") 
+		{
+            actorData.merits.push(i)
+        }
+        if (i.type == "weapons") 
+		{
+            actorData.weapons.push(i)
+        }
+		if (i.type == "armor") 
+		{
+            actorData.armor.push(i)
+        }
+		if (i.type == "condition") 
+		{
+            actorData.condition.push(i)
+        }
+		if (i.type == "dread") 
+		{
+            actorData.dread.push(i)
+        }
+		if (i.type == "equipment") 
+		{
+            actorData.equipment.push(i)
+        }
+		if (i.type == "service") 
+		{
+            actorData.service.push(i)
+        }
+		if (i.type == "tilt") 
+		{
+            actorData.tilt.push(i)
+        }
+		if (i.type == "vehicle") 
+		{
+            actorData.vehicle.push(i)
+        }
+    }
 }
 
   /* -------------------------------------------- */
@@ -309,6 +357,7 @@ Hooks.once("init", () => {
     loadTemplates([
     "systems/cod/templates/actor/actor-main.html",
     "systems/cod/templates/actor/actor-merits.html",
-    "systems/cod/templates/actor/actor-skills.html"
+    "systems/cod/templates/actor/actor-skills.html",
+	"systems/cod/templates/actor/actor-equipment.html"
     ]);
   });

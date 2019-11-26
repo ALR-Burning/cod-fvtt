@@ -391,6 +391,12 @@ height: 67%
 	font-size: 25px;
 }
 
+.cod.sheet .equipment h2 {
+	text-align: center;
+	color: rgb(64, 86, 134);
+	font-size: 25px;
+}
+
 .cod.sheet .items-list .item {
     height: 30px;
     line-height: 24px;

@@ -525,9 +525,9 @@
         "label": "Range",
         "value": ""
       },
-      "clip": {
+      "capacity": {
         "type": "String",
-        "label": "Clip",
+        "label": "Capacity",
         "value": ""
       },
       "initiative": {
