@@ -210,6 +210,31 @@
               "max" : 500,
               "min": 1,
               "proficient": 0
+            },
+			"allies": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
+			"contacts": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
+			"enemies": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
+			"residence": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
+			"vehicles": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
             }
         }
       },
@@ -515,6 +540,11 @@
       }
     },
     "weapon": {
+	"attack": {
+        "type": "String",
+        "label": "Attack",
+        "value": ""
+      },
       "damage": {
         "type": "String",
         "label": "Damage",
@@ -548,6 +578,11 @@
       "availability": {
         "type": "String",
         "label": "Availability",
+        "value": ""
+      },
+	  "tags": {
+        "type": "String",
+        "label": "Tags",
         "value": ""
       }
     }

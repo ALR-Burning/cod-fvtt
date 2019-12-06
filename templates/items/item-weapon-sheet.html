@@ -23,8 +23,19 @@
     {{!-- Sheet Body --}}
     <section class="sheet-body">
 
-		{{!-- Attributes Tab --}}
+	{{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
+	<div class="form-group">
+      <label class="label-text">{{data.attack.label}}</label>
+      <select name="data.attack.value" data-dtype="String">
+        {{#select data.attack.value}}
+        <option value=""></option>
+        {{#each attacks as |name key|}}
+        <option value="{{key}}">{{name}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
 		<div class="form-group">
       <label class="label-text">{{data.damage.label}}</label>
       <div class="input-box">
@@ -67,9 +78,15 @@
         <input class="input-text" name="data.availability.value" value="{{data.availability.value}}" data-dtype="{{data.availability.type}}" />
       </div>
     </div>
+	<div class="form-group">
+      <label class="label-text">{{data.tags.label}}</label>
+      <div class="input-box">
+        <input class="input-text" name="data.tags.value" value="{{data.tags.value}}" data-dtype="{{data.tags.type}}" />
+      </div>
+    </div>
     </div>
 
-        {{!-- Description Tab --}}
+    {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
             {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
         </div>

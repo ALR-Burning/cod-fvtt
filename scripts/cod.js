@@ -83,6 +83,26 @@ CONFIG.groupMapping = {
   "subterfuge": "social"
 }
 
+// Attack Categories
+CONFIG.attacks = {
+  "brawl": "Brawl",
+  "melee": "Melee",
+  "gun": "Gun",
+  "thrown": "Thrown",
+  "brawlFinesse": "Brawl (Fighting Finesse)",
+  "meleeFinesse": "Melee (Fighting Finesse)"
+};
+
+// Attack Skills
+CONFIG.attackSkills = {
+  "brawl": "str,brawl",
+  "melee": "str,weaponry",
+  "gun": "dex,firearms",
+  "thrown": "dex,athletics",
+  "brawlFinesse": "dex,brawl",
+  "meleeFinesse": "dex,weaponry"
+};
+
 class ActorCoD extends Actor 
 {
 	rollPool(attribute, skill, modifier)
@@ -263,6 +283,17 @@ for (let g in displayAttrGroups)
           }).render(true)
     })
 	})
+	
+	html.find(".weapon-roll").click(event => 
+{	
+    let itemId = Number($(event.currentTarget).parents(".item").attr("data-item-id"));
+	let item = this.actor.getOwnedItem(itemId);
+	let attackType = item.data.data.attack.value;
+	let formula = CONFIG.attackSkills[attackType]
+	formula = formula.split(",")
+	this.actor.rollPool(formula[0], formula[1])
+	console.log(formula)
+})
 
     // Activate tabs
     let tabs = html.find('.tabs');
@@ -313,7 +344,7 @@ class CoDItemSheet extends ItemSheet {
 	  const options = super.defaultOptions;
 	  options.classes = options.classes.concat(["cod", "item-sheet"]);
 	  options.template = "systems/cod/templates/item-sheet.html";
-	  options.height = 400;
+	  options.height = 440;
 	  return options;
   }
    /**
@@ -323,6 +354,14 @@ class CoDItemSheet extends ItemSheet {
       let type = this.item.type;
       return `systems/cod/templates/items/item-${type}-sheet.html`;
     }
+	getData () {
+    const data = super.getData();
+    if (this.item.type == "weapon")
+    {
+        data["attacks"] = CONFIG.attacks
+    }
+    return data
+}
 	/**
    * Activate event listeners using the prepared sheet HTML
    * @param html {HTML}   The prepared HTML object ready to be rendered into the DOM
@@ -346,7 +385,6 @@ Items.registerSheet("core", CoDItemSheet, {
   makeDefault: true
 });
 
-
 /**
  * Set an initiative formula for the system
  * @type {String}
@@ -358,6 +396,7 @@ Hooks.once("init", () => {
     "systems/cod/templates/actor/actor-main.html",
     "systems/cod/templates/actor/actor-merits.html",
     "systems/cod/templates/actor/actor-skills.html",
-	"systems/cod/templates/actor/actor-equipment.html"
+	"systems/cod/templates/actor/actor-equipment.html",
+	"systems/cod/templates/actor/actor-extra.html"
     ]);
   });
