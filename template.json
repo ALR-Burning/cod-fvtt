@@ -211,6 +211,31 @@
               "min": 1,
               "proficient": 0
             },
+			"height": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
+			"weight": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
+			"haircolor": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
+			"eyecolor": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
+			"birthplace": {
+              "type": "String",
+			  "label": "Availability",
+			  "value": ""
+            },
 			"allies": {
               "type": "String",
 			  "label": "Availability",
