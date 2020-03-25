@@ -2,7 +2,7 @@
   "name": "cod",
   "title": "Chronicles of Darkness",
   "description": "I'll make one later.",
-  "version": 0.1,
+  "version": 0.2,
   "author": "Burning, Moo Man",
   "scripts": ["scripts/cod.js"],
   "styles": ["styles/cod.css"],
@@ -10,5 +10,5 @@
   "initiative": "1d10",
   "gridDistance": 1,
   "gridUnits": "m",
-  "minimumCoreVersion" : "0.4.0"
+  "minimumCoreVersion" : "0.5.1"
 }

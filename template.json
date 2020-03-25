@@ -1,5 +1,5 @@
 {
-  "actor": {
+  "Actor": {
     "data": {
         "attributes": {
           "int": {
@@ -459,7 +459,8 @@
 		}
 	}
   },
-  "item": {
+  "Item": {
+    "types": ["armor", "condition", "dread", "equipment", "merit", "service", "tilt", "weapon"],
     "data": {
       "description": {
         "type": "String",
