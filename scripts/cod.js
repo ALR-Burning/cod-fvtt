@@ -138,7 +138,8 @@ class ActorSheetCoD extends ActorSheet {
 
 getData() {
       const sheetData = super.getData();
-	  this._prepareItems(sheetData.actor);
+    this._prepareItems(sheetData.actor);
+    sheetData.attrGroups = this.sortAttrGroups();
       return sheetData;
     }
 	
@@ -194,6 +195,84 @@ _prepareItems(actorData)
     }
 }
 
+sortAttrGroups()
+{
+  let stats = duplicate(CONFIG.skills) 
+  let attributes = duplicate(CONFIG.attributes)
+  let skillGroups = duplicate(CONFIG.groups)
+  let attrGroups = duplicate(CONFIG.groups)
+
+  for (let g in skillGroups)
+  {
+    skillGroups[g] = {}
+    attrGroups[g] = {}
+  }
+
+  for (let s in stats)
+  {
+    let skillGroup = CONFIG.groupMapping[s]
+    skillGroups[skillGroup][s] = stats[s]
+  }
+    for (let a in attributes)
+  {
+    let attrGroup = CONFIG.groupMapping[a]
+    attrGroups[attrGroup][a] = attributes[a]
+  }
+
+  let displayAttrGroups = Object.keys(attrGroups).map((key) => {
+    const newKey = CONFIG.groups[key];
+    return { [newKey] : attrGroups[key] };
+  }).reduce((a, b) => Object.assign({}, a, b));
+
+  for (let g in displayAttrGroups)
+  {
+    for (let a in displayAttrGroups[g])
+    {
+      displayAttrGroups[g][a] += " (" + this.actor.data.data.attributes[a].current+")"
+    }
+  }
+  return displayAttrGroups;
+}
+
+sortSkillGroups()
+{
+  let stats = duplicate(CONFIG.skills) 
+  let attributes = duplicate(CONFIG.attributes)
+  let skillGroups = duplicate(CONFIG.groups)
+  let attrGroups = duplicate(CONFIG.groups)
+
+  for (let g in skillGroups)
+  {
+    skillGroups[g] = {}
+    attrGroups[g] = {}
+  }
+
+  for (let s in stats)
+  {
+    let skillGroup = CONFIG.groupMapping[s]
+    skillGroups[skillGroup][s] = stats[s]
+  }
+    for (let a in attributes)
+  {
+    let attrGroup = CONFIG.groupMapping[a]
+    attrGroups[attrGroup][a] = attributes[a]
+  }
+
+  let displaySkillGroups = Object.keys(skillGroups).map((key) => {
+    const newKey = CONFIG.groups[key];
+    return { [newKey] : skillGroups[key] };
+  }).reduce((a, b) => Object.assign({}, a, b));
+
+  for (let g in displaySkillGroups)
+  {
+    for (let s in displaySkillGroups[g])
+    {
+      displaySkillGroups[g][s] += " (" + this.actor.data.data.skills[s].current+")"
+    }
+  }
+  return displaySkillGroups;
+}
+
   /* -------------------------------------------- */
 
   /**
@@ -204,59 +283,12 @@ _prepareItems(actorData)
     super.activateListeners(html);
 
 	html.find(".roll-pool").click(event => {
-	let defaultSelection = $(event.currentTarget).attr("data-skill")
-	let stats = duplicate(CONFIG.skills) 
-	let attributes = duplicate(CONFIG.attributes)
-	let skillGroups = duplicate(CONFIG.groups)
-	let attrGroups = duplicate(CONFIG.groups)
-
-	for (let g in skillGroups)
-	{
-		 skillGroups[g] = {}
-		 attrGroups[g] = {}
-	}
-
-	for (let s in stats)
-	{
-		let skillGroup = CONFIG.groupMapping[s]
-		skillGroups[skillGroup][s] = stats[s]
-	}
-		for (let a in attributes)
-	{
-		let attrGroup = CONFIG.groupMapping[a]
-		attrGroups[attrGroup][a] = attributes[a]
-	}
-	
-	let displaySkillGroups = Object.keys(skillGroups).map((key) => {
-  const newKey = CONFIG.groups[key];
-  return { [newKey] : skillGroups[key] };
-}).reduce((a, b) => Object.assign({}, a, b));
-
-let displayAttrGroups = Object.keys(attrGroups).map((key) => {
-  const newKey = CONFIG.groups[key];
-  return { [newKey] : attrGroups[key] };
-}).reduce((a, b) => Object.assign({}, a, b));
-
-for (let g in displaySkillGroups)
-{
-  for (let s in displaySkillGroups[g])
-  {
-    displaySkillGroups[g][s] += " (" + this.actor.data.data.skills[s].current+")"
-  }
-}
-
-for (let g in displayAttrGroups)
-{
-  for (let a in displayAttrGroups[g])
-  {
-    displayAttrGroups[g][a] += " (" + this.actor.data.data.attributes[a].current+")"
-  }
-}
-
+  let defaultSelection = $(event.currentTarget).attr("data-skill")
+  
 		let dialogData = {
 			defaultSelection : defaultSelection,
-			skills : displaySkillGroups,
-			attributes : displayAttrGroups,
+			skills : this.sortSkillGroups(),
+			attributes : this.sortAttrGroups(),
 			groups : CONFIG.groups
         }
     renderTemplate('systems/cod/templates/pool-dialog.html', dialogData) .then(html => {
@@ -309,16 +341,30 @@ for (let g in displayAttrGroups)
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
+      const item = this.actor.items.find(i => i.id == li.attr("data-item-id"));
       item.sheet.render(true);
     });
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
+      this.actor.deleteEmbeddedEntity("OwnedItem", li.data("itemId"));
       li.slideUp(200, () => this.render(false));
     });
+
+    // Update Inventory Item
+    html.find('.item-add').click(ev => {
+      const type = $(ev.currentTarget).attr("data-item-type");
+      if (type != "roll")
+        this.actor.createEmbeddedEntity("OwnedItem", {type : type, name : `New ${type.capitalize()}`})
+      else 
+      {
+        let rolls = this.actor.data.data.rolls;
+        rolls.push("test")
+        this.actor.update({rolls: rolls})
+      }
+    });
+    
   }
 }
 
@@ -397,6 +443,7 @@ Hooks.once("init", () => {
     "systems/cod/templates/actor/actor-merits.html",
     "systems/cod/templates/actor/actor-skills.html",
 	"systems/cod/templates/actor/actor-equipment.html",
-	"systems/cod/templates/actor/actor-extra.html"
+	"systems/cod/templates/actor/actor-extra.html",
+	"systems/cod/templates/actor/actor-rolls.html"
     ]);
   });

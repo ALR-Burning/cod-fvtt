@@ -1,0 +1,44 @@
+		<div class="rolls">
+            <h2>Custom Rolls</h2>
+		 <div class="items">
+            <ol class="items-list">
+            {{#each actor.rolls as |roll index|}}
+
+            <li class="rolls flexrow">
+                <div class="attribute-selector">
+                    <select name="attributeSelector">
+                    {{#select defaultSelection}}
+                    <option value="none">None</option>
+                    {{#each attributes as |group key|}}
+                    <optgroup label = "{{key}}">"
+                        {{#each group as |attrName attrKey|}}
+                        <option value="{{attrKey}}">{{attrName}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                    </select>
+                </div>
+                <div class="attribute-selector">
+                        <select name="attributeSelector">
+                        {{#select defaultSelection}}
+                        <option value="none">None</option>
+                        {{#each attributes as |group key|}}
+                        <optgroup label = "{{key}}">"
+                            {{#each group as |attrName attrKey|}}
+                            <option value="{{attrKey}}">{{attrName}}</option>
+                            {{/each}}
+                        </optgroup>
+                        {{/each}}
+                        {{/select}}
+                        </select>
+                    </div>
+                    <button class = "roll-button">Roll</button>
+            </li>
+            {{/each}}
+            <li>
+                <a class = "item-add" data-item-type = "roll">+ Add</a>
+            </li>
+            </ol>
+        </div>
+		</div>
