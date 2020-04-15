@@ -139,7 +139,7 @@ class ActorSheetCoD extends ActorSheet {
 getData() {
       const sheetData = super.getData();
     this._prepareItems(sheetData.actor);
-    sheetData.attrGroups = this.sortAttrGroups();
+    sheetData.attributes = this.sortAttrGroups();
       return sheetData;
     }
 	
@@ -318,9 +318,9 @@ sortSkillGroups()
 	
 	html.find(".weapon-roll").click(event => 
 {	
-    let itemId = Number($(event.currentTarget).parents(".item").attr("data-item-id"));
-	let item = this.actor.getOwnedItem(itemId);
-	let attackType = item.data.data.attack.value;
+    let itemId = $(event.currentTarget).parents(".item").attr("data-item-id");
+	let item = this.actor.getEmbeddedEntity("OwnedItem", itemId);
+	let attackType = item.data.attack.value;
 	let formula = CONFIG.attackSkills[attackType]
 	formula = formula.split(",")
 	this.actor.rollPool(formula[0], formula[1])
@@ -359,11 +359,50 @@ sortSkillGroups()
         this.actor.createEmbeddedEntity("OwnedItem", {type : type, name : `New ${type.capitalize()}`})
       else 
       {
-        let rolls = this.actor.data.data.rolls;
-        rolls.push("test")
-        this.actor.update({rolls: rolls})
+        let rolls = duplicate(this.actor.data.data.rolls);
+        rolls.push({name : "New Roll"})
+        this.actor.update({"data.rolls": rolls})
       }
     });
+
+    // Delete Inventory Item
+    html.find('.roll-name').change(ev => {
+      let rollIndex = $(ev.currentTarget).parents(".rolls").attr("data-index");
+      let newName = ev.target.value;
+      let rollList = duplicate(this.actor.data.data.rolls)
+      rollList[rollIndex].name = newName;
+      this.actor.update({"data.rolls" : rollList})
+    });
+    // Delete Inventory Item
+    html.find('.roll-delete').click(ev => {
+      let rollIndex = Number($(ev.currentTarget).parents(".rolls").attr("data-index"));
+      let rollList = duplicate(this.actor.data.data.rolls)
+      rollList.splice(rollIndex, 1);
+      this.actor.update({"data.rolls" : rollList})
+    });
+
+      // Delete Inventory Item
+      html.find('.roll.attribute-selector').change(ev => {
+        let rollIndex = Number($(ev.currentTarget).parents(".rolls").attr("data-index"));
+        let primary = $(ev.currentTarget).hasClass("primary")
+        let rollList = duplicate(this.actor.data.data.rolls)
+        if (primary)
+          rollList[rollIndex].primary = ev.target.value;
+        else
+          rollList[rollIndex].secondary = ev.target.value;
+          
+        this.actor.update({"data.rolls" : rollList})
+      });
+
+    // Delete Inventory Item
+    html.find('.roll-button').click(ev => {
+      let rollIndex = Number($(ev.currentTarget).parents(".rolls").attr("data-index"));
+      this.actor.data.data.rolls
+      this.actor.rollPool(this.actor.data.data.rolls[rollIndex].primary, "none", this.actor.data.data.attributes[this.actor.data.data.rolls[rollIndex].secondary].current)
+        
+    });
+              
+        
     
   }
 }

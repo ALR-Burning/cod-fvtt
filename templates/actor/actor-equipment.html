@@ -5,7 +5,7 @@
 			</div>
             <ol class="items-list">
             {{#each actor.weapons as |item id|}}
-                <li class="item flexrow" data-item-id="{{item.id}}">
+                <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                     <a class = "item-name weapon-roll">{{item.name}}</a>
                     <div class="item-controls">
@@ -19,7 +19,7 @@
 			</div>
 			<ol class="items-list">
             {{#each actor.armor as |item id|}}
-                <li class="item flexrow" data-item-id="{{item.id}}">
+                <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                     <a class = "item-name">{{item.name}}</a>
                     <div class="item-controls">
@@ -33,7 +33,7 @@
 			</div>
 			<ol class="items-list">
             {{#each actor.equipment as |item id|}}
-                <li class="item flexrow" data-item-id="{{item.id}}">
+                <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                     <a class = "item-name">{{item.name}}</a>
                     <div class="item-controls">

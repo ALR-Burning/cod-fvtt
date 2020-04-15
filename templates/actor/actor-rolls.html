@@ -2,14 +2,15 @@
             <h2>Custom Rolls</h2>
 		 <div class="items">
             <ol class="items-list">
-            {{#each actor.rolls as |roll index|}}
-
-            <li class="rolls flexrow">
-                <div class="attribute-selector">
+            {{#each data.rolls as |roll index|}}
+            
+            <li class="rolls flexrow" data-index={{index}}>
+                <input class = "roll-name" type="text" value = "{{roll.name}}" >
+                <div class="attribute-selector roll primary">
                     <select name="attributeSelector">
-                    {{#select defaultSelection}}
+                    {{#select roll.primary}}
                     <option value="none">None</option>
-                    {{#each attributes as |group key|}}
+                    {{#each ../attributes as |group key|}}
                     <optgroup label = "{{key}}">"
                         {{#each group as |attrName attrKey|}}
                         <option value="{{attrKey}}">{{attrName}}</option>
@@ -19,11 +20,11 @@
                     {{/select}}
                     </select>
                 </div>
-                <div class="attribute-selector">
+                <div class="attribute-selector roll secondary">
                         <select name="attributeSelector">
-                        {{#select defaultSelection}}
+                        {{#select roll.secondary}}
                         <option value="none">None</option>
-                        {{#each attributes as |group key|}}
+                        {{#each ../attributes as |group key|}}
                         <optgroup label = "{{key}}">"
                             {{#each group as |attrName attrKey|}}
                             <option value="{{attrKey}}">{{attrName}}</option>
@@ -34,6 +35,9 @@
                         </select>
                     </div>
                     <button class = "roll-button">Roll</button>
+                    <div class="item-controls">
+                            <a class="item-control roll-delete" title="Delete Roll"><i class="fas fa-trash"></i></a>
+                    </div>  
             </li>
             {{/each}}
             <li>
